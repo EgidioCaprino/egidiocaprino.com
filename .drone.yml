@@ -8,19 +8,9 @@ steps:
     commands:
       - version=$(node -p -e "require('./package.json').version")
       - url=https://index.docker.io/v1/repositories/egidiocaprino/web/tags/$version
-      - echo $url
       - status_code=$(curl -s -o /dev/null -w '%{http_code}' $url)
-      - echo $status_code
       - if [ $status_code -eq 200 ]; then echo 'Docker image already exists. Stopping pipeline.'; exit 1; fi
       - echo -n $version > .tags
-      - cat .tags
-
-  - name: build
-    image: egidiocaprino/pipeline-runner
-    commands:
-      - rm -rf node_modules .next
-      - npm install
-      - npm run build
 
   - name: publish docker image
     image: plugins/docker
