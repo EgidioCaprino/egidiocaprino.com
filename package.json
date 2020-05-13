@@ -1,0 +1,30 @@
+{
+  "name": "egidiocaprino.com",
+  "version": "1.0.2",
+  "description": "My website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EgidioCaprino/egidiocaprino.com.git"
+  },
+  "author": "Egidio Caprino <egidio.caprino@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EgidioCaprino/egidiocaprino.com/issues"
+  },
+  "homepage": "https://github.com/EgidioCaprino/egidiocaprino.com#readme",
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "bootswatch": "^4.4.1",
+    "next": "^9.3.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-feather": "^2.0.3"
+  }
+}
