@@ -4,7 +4,7 @@ name: default
 
 steps:
   - name: check docker image does not exist
-    image: node:12.16.1-alpine
+    image: egidiocaprino/pipeline-runner
     commands:
       - version=$(node -p -e "require('./package.json').version")
       - 'status_code=$(curl -s -o /dev/null -w "%{http_code}" "https://index.docker.io/v1/repositories/egidiocaprino/web/tags/${version}")'
@@ -16,7 +16,7 @@ steps:
       - echo -n "${version}" > .tags
 
   - name: build
-    image: node:12.16.1-alpine
+    image: egidiocaprino/pipeline-runner
     commands:
       - rm -rf node_modules .next
       - npm install
