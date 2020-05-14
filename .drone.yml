@@ -21,6 +21,15 @@ steps:
       password:
         from_secret: docker_password
 
+  - name: trigger ansible deployment
+    image: plugins/downstream
+    settings:
+      server: https://drone.egidiocaprino.com
+      token:
+        from_secret: drone_access_token
+      repositories:
+        - EgidioCaprino/ansible
+
 trigger:
   branch:
     - master
