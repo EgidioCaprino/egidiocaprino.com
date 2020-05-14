@@ -10,7 +10,7 @@ steps:
       - url=https://index.docker.io/v1/repositories/egidiocaprino/web/tags/$version
       - status_code=$(curl -s -o /dev/null -w '%{http_code}' $url)
       - if [ $status_code -eq 200 ]; then echo 'Docker image already exists. Stopping pipeline.'; exit 1; fi
-      - echo -n $version > .tags
+      - echo -n $version,latest > .tags
 
   - name: publish docker image
     image: plugins/docker
