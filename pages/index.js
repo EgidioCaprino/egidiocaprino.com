@@ -109,12 +109,8 @@ export default () => (
       </div>
     </div>
 
-    <div className="row mt-5">
-      <div className="col-md-12">
-        <p className="text-center small">
-          Copyright © { new Date().getFullYear() } Egidio Caprino. All rights reserved.
-        </p>
-      </div>
-    </div>
+    <p className="text-center small mt-5">
+      Copyright © { new Date().getFullYear() } Egidio Caprino. All rights reserved.
+    </p>
   </>
 );
