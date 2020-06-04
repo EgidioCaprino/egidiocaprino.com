@@ -101,6 +101,18 @@ export default () => (
     <div className="container mt-5">
       <div className="row mb-3">
         <div className="col-md-12">
+          <p className="text-center">
+            <a target="_blank" href="https://www.linkedin.com/in/egidio-caprino-3042b476/detail/recent-activity/posts/" role="button" className="btn btn-success btn-lg">
+              <Linkedin /> Check out my articles
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div className="container mt-5">
+      <div className="row mb-3">
+        <div className="col-md-12">
           <h2>Experience</h2>
         </div>
       </div>
