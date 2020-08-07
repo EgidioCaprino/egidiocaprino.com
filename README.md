@@ -12,5 +12,5 @@ npm run build
 
 ## Deployment
 
-Pushing changes to remote `development` branch triggers a Github action which builds and publish the website to
+Pushing changes to remote `development` branch triggers a Github action which builds and publishes the website to
 GitHub Pages.
