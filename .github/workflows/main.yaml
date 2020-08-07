@@ -23,6 +23,7 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: touch out/.nojekyll
+      - run: cp CNAME out/CNAME
       - if: success()
         uses: crazy-max/ghaction-github-pages@v2.1.1
         with:
