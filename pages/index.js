@@ -1,7 +1,5 @@
-import Head from 'next/head';
 import { Linkedin, Twitter, Mail, MapPin } from 'react-feather';
-
-import 'bootswatch/dist/darkly/bootstrap.min.css';
+import Layout from './layout';
 
 const experiences = [
   {
@@ -58,14 +56,7 @@ const Experience = ({ role, description, location }) => (
 );
 
 export default () => (
-  <>
-    <Head>
-      <title>Egidio Caprino - Software Developer</title>
-      <base href="/" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="manifest" href="/site.webmanifest" />
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    </Head>
+  <Layout title="Egidio Caprino - Software Developer">
     <div className="container mt-4">
       <div className="row">
         <div className="col-12">
@@ -108,9 +99,5 @@ export default () => (
         { experiences.map(Experience) }
       </div>
     </div>
-
-    <p className="text-center small mt-5">
-      Copyright © { new Date().getFullYear() } Egidio Caprino. All rights reserved.
-    </p>
-  </>
+  </Layout>
 );
