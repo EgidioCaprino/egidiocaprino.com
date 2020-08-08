@@ -1,7 +1,7 @@
 import { Linkedin, Twitter, Mail, MapPin } from 'react-feather';
 import Experience from '../components/Experience';
 import Article from '../components/Article';
-import Layout from './layout';
+import Layout from '../components/Layout';
 import getArticles from '../shared/libs/getArticles';
 
 const experiences = [

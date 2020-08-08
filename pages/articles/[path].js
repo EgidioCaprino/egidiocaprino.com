@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Layout from '../layout';
+import Layout from '../../components/Layout';
 import getArticles from '../../shared/libs/getArticles';
 import getFullArticle from '../../shared/libs/getFullArticle';
 

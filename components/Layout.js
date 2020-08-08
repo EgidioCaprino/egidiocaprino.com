@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import 'bootswatch/dist/darkly/bootstrap.min.css';
+import 'bootswatch/dist/journal/bootstrap.min.css';
 
 export default ({ title, children }) => (
   <>
