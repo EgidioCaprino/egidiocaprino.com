@@ -1,44 +1,40 @@
-import { DateTime } from 'luxon';
+import Link from 'next/link';
 import Layout from '../layout';
-import articles, { getArticleContent } from '../../articles';
+import getArticles from '../../shared/libs/getArticles';
+import getFullArticle from '../../shared/libs/getFullArticle';
 
 const pathRegExp = /^([0-9]+)-.+$/;
 
-const getArticleId = path => {
-  const [, id] = pathRegExp.exec(path);
-  return id;
-};
-
 export const getStaticProps = async ({ params }) => {
   const { path } = params;
-  const id = getArticleId(path);
-  const { title, date } = articles.find(article => article.id === id);
-  const content = await getArticleContent(id);
+  const [, id] = pathRegExp.exec(path);
+  const article = await getFullArticle(parseInt(id));
   return {
     props: {
-      title,
-      content,
-      date: DateTime.fromSeconds(date).toLocaleString(DateTime.DATE_FULL),
+      ...article,
     },
   };
 };
 
 export const getStaticPaths = () => {
-  const paths = articles.map(({ id, url }) => ({
+  const paths = getArticles().map(({ id, name }) => ({
     params: {
-      path: `${id}-${url}`,
+      path: `${id}-${name}`,
     },
   }));
   return { paths, fallback: false };
 };
 
-export default ({ title, content, date }) => (
+export default ({ title, content, formattedDate }) => (
   <Layout title={ title }>
     <div className="container">
-      <div className="row mb-4">
+      <div className="row mb-4 mt-4">
         <div className="col-6 offset-3">
+          <Link href="/">
+            <a>Go back</a>
+          </Link>
           <h1>{ title }</h1>
-          <p className="text-muted">{ date }</p>
+          <p className="text-muted">{ formattedDate }</p>
         </div>
       </div>
       <div className="row">

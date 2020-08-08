@@ -1,5 +1,8 @@
 import { Linkedin, Twitter, Mail, MapPin } from 'react-feather';
+import Experience from '../components/Experience';
+import Article from '../components/Article';
 import Layout from './layout';
+import getArticles from '../shared/libs/getArticles';
 
 const experiences = [
   {
@@ -43,19 +46,16 @@ const subject = encodeURIComponent('Hello!');
 const body = encodeURIComponent('Hi there,');
 const mailToUrl = `mailto:egidio.caprino@gmail.com?subject=${subject}&body=${body}`;
 
-const Experience = ({ role, description, location }) => (
-  <div className="col mb-4">
-    <div className="card border-light">
-      <div className="card-header">{ role }</div>
-      <div className="card-body">
-        <h5 className="card-title">{ description }</h5>
-        <p className="card-text">{ location }</p>
-      </div>
-    </div>
-  </div>
-);
+export const getStaticProps = async () => {
+  const articles = await getArticles();
+  return {
+    props: {
+      articles,
+    },
+  };
+};
 
-export default () => (
+export default ({ articles }) => (
   <Layout title="Egidio Caprino - Software Developer">
     <div className="container mt-4">
       <div className="row">
@@ -85,6 +85,17 @@ export default () => (
               <MapPin /> Vicenza, Italy
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="container mt-5">
+      <div className="row mb-3">
+        <div className="col-md-12">
+          <h2>Articles</h2>
+          <ul className="list-unstyled">
+            { articles.map(Article) }
+          </ul>
         </div>
       </div>
     </div>
