@@ -16,5 +16,11 @@
     "title": "Custom CI/CD pipeline with AWS CodePipeline",
     "name": "custom-ci-cd-pipeline-with-aws-codepipeline",
     "date": 1546776000
+  },
+  {
+    "id": 4,
+    "title": "LRU cache in Go",
+    "name": "lru-cache-in-go",
+    "date": 1563710400
   }
 ]
