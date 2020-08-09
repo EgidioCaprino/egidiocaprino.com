@@ -10,5 +10,11 @@
     "title": "Put your database under version control",
     "name": "put-your-database-under-version-control",
     "date": 1517832000
+  },
+  {
+    "id": 3,
+    "title": "Custom CI/CD pipeline with AWS CodePipeline",
+    "name": "custom-ci-cd-pipeline-with-aws-codepipeline",
+    "date": 1546776000
   }
 ]
