@@ -62,7 +62,7 @@ export default ({ articles }) => (
         <div className="col-12">
           <div className="jumbotron text-center">
             <p className="text-center">
-              <img className="rounded-circle img-thumbnail" type="image/svg+xml" src="/me.svg" style={{ width: '40%' }} />
+              <img className="rounded-circle img-thumbnail" type="image/svg+xml" src="/me.png" style={{ width: '40%' }} />
             </p>
             <h1 className="display-4">Egidio Caprino</h1>
             <p className="lead">Software Developer</p>
