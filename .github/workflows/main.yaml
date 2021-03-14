@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-      - uses: actions/checkout@v2.3.1
-      - uses: actions/setup-node@v2.1.1
+      - uses: actions/checkout@v2.3.4
+      - uses: actions/setup-node@v2.1.5
         with:
-          node-version: '12'
-      - uses: actions/cache@v2.1.0
+          node-version: '15'
+      - uses: actions/cache@v2.1.4
         with:
           path: |
             ~/.npm
@@ -28,7 +28,7 @@ jobs:
       - run: touch out/.nojekyll
       - run: cp CNAME out/CNAME
       - if: success()
-        uses: crazy-max/ghaction-github-pages@v2.1.1
+        uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
           target_branch: master
           build_dir: out
